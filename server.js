@@ -13,6 +13,7 @@ app.use(cors())
 app.use(express.static('website'))
 
 const port = process.env.PORT || 3000
+const key = process.env.WEATHER_API_KEY
 
 const server = app.listen(port, () => {
   console.log(`Server running at localhost ${port}`)
@@ -21,6 +22,10 @@ const server = app.listen(port, () => {
 app.get('/all', (req, res) => {
   console.log(req)
   res.send(projectData)
+})
+
+app.get('/getkey', (req, res) => {
+  res.send(key)
 })
 
 app.post('/add', (req, res) => {

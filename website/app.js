@@ -1,21 +1,30 @@
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip='
-const key = 'c918cb52bf20e6c96d3edf181ec837dc'
 const units = '&units=metric'
-const apiKey = '&appid=' + key + units
+let secretKey = ''
+let apiKey = ''
 
 const date = new Date()
 const day = date.getDate()
 const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
-const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-const today = `${day} ${months[date.getMonth()]}, ${days[date.getDay()]}`;
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+const today = `${day} ${months[date.getMonth()]}, ${days[date.getDay()]}`
+
+fetch('/getkey')
+  .then(response => response.text())
+  .then(key => {
+    secretKey = key
+    apiKey = `&appid=${secretKey}${units}`
+  });
 
 function submitInfo(e) {
-  event.preventDefault();
+  event.preventDefault()
   
-  const zipCodeInput = document.getElementById('zip-code');
-  const feelingsInput = document.getElementById('feelings');
-  const zipCode = zipCodeInput.value;
-  const feelings = feelingsInput.value;
+  const zipCodeInput = document.getElementById('zip-code')
+  const feelingsInput = document.getElementById('feelings')
+  const zipCode = zipCodeInput.value
+  const feelings = feelingsInput.value
+  zipCodeInput.value = ''
+  feelingsInput.value = ''
 
   weatherInfo(baseUrl, zipCode, apiKey)
   .then((data) => {
@@ -48,7 +57,7 @@ const weatherInfo = async (baseUrl, zipCode, apiKey) => {
 
 const postData = async (url='', data={}) => {
   const response = await fetch(url, {
-      method:'post',
+      method:'POST',
       credentials:'same-origin',
       headers:{
           'content-type':'application/json'
