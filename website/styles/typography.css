@@ -1,0 +1,31 @@
+@import url(colors.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 19px;
+  color: #fff;
+}
+
+p {
+  font-weight: 400;
+}
+
+.temp {
+  font-weight: 700;
+  font-size: 8em;
+}
+
+input[type=number] {
+  font-size: 1.3em;
+}
+
+input[type=submit] {
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+textarea {
+  font-size: 1.3em;
+}

@@ -1,0 +1,5 @@
+:root {
+  --day-bg: hsl(207, 83%, 55%);
+  --sunset-bg: linear-gradient(to top, #040308, #AD4A28, #DD723C, #FC7001, #DCB697, #9BA5AE, #3E5879, #020B1A);
+  --night-bg: hsl(206, 100%, 16%);
+}

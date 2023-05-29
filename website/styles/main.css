@@ -1,0 +1,97 @@
+@import url(typography.css);
+@import url(colors.css);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.content-wraper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: var(--night-bg);
+}
+
+/* //////// FORM SECTION //////// */
+.form-container {
+  width: 30%;
+  max-width: 410px;
+  background-color: hsl(0, 0%, 15%);
+  padding: 1.5em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type=submit] {
+  border: none;
+  padding: 1.4em 1.4em;
+  cursor: pointer;
+  background-color: rgb(16, 120, 255);
+  border-radius: 0.4em;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(1, 89, 204);
+  transition: background-color 500ms;
+}
+
+input[type=submit]:active {
+  transform: scale(0.97);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+input[type=number] {
+  border-radius: 0.4em;
+  padding: 0.3em;
+}
+
+textarea {
+  resize: none;
+  border-radius: 0.4em;
+  padding: 0.3em;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+/* Remove number set in input number Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove number set in input number  Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* //////// TEMPERATURE INFO SECTION //////// */
+.temp-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.temp-info-box {
+  text-align: center;
+}
+
+.temp {
+  
+}
