@@ -9,6 +9,11 @@ const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Satur
 const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 const today = `${day} ${months[date.getMonth()]}, ${days[date.getDay()]}`
 
+const termIcon = document.querySelector('.term-icon')
+const tempInfoContainer = document.querySelector('.temp-info-container')
+const menuMobileButton = document.getElementById('menu-mobile-btn')
+const formContainer = document.querySelector('.form-container')
+
 fetch('/getkey')
   .then(response => response.text())
   .then(key => {
@@ -23,8 +28,8 @@ function submitInfo(e) {
   const feelingsInput = document.getElementById('feelings')
   const zipCode = zipCodeInput.value
   const feelings = feelingsInput.value
-  zipCodeInput.value = ''
-  feelingsInput.value = ''
+  // zipCodeInput.value = ''
+  // feelingsInput.value = ''
 
   weatherInfo(baseUrl, zipCode, apiKey)
   .then((data) => {
@@ -36,10 +41,11 @@ function submitInfo(e) {
       icon: data.weather[0].icon,
       content: feelings
     }).then((newData) => {
+      changeImageBackground(newData.icon, Math.round(newData.temp))
       document.querySelector('.date').innerText = newData.date
       document.querySelector('.temp').innerText = Math.round(newData.temp) + `\u00B0C`
       document.querySelector('.temp-description').innerText = newData.description
-      document.querySelector('.content-info').innerText = newData.content
+      document.querySelector('.content-info').innerText = 'Today you are feeling: ' + newData.content
     })
   })
 }
@@ -72,3 +78,33 @@ const postData = async (url='', data={}) => {
     console.log("error",error)
   }
 }
+
+function changeImageBackground(imgName, temp) {
+  tempInfoContainer.style.background = `url(../assets/images/${imgName}.svg)`
+  tempInfoContainer.style.backgroundRepeat = 'no-repeat'
+  tempInfoContainer.style.backgroundSize = 'cover'
+  tempInfoContainer.style.backgroundPosition = 'center'
+
+  temp > 25 ? termIcon.src = 'assets/images/thermometer-red.svg' : termIcon.src = 'assets/images/thermometer-blue.svg'
+}
+
+menuMobileButton.addEventListener('click', () => {
+  let linkImage = menuMobileButton.src
+  
+  if(linkImage.includes('bars-solid')) {
+    menuMobileButton.src = 'assets/icons/x-solid.svg'
+    formContainer.style.display = 'block'
+  } else if(linkImage.includes('x-solid')) {
+    menuMobileButton.src = 'assets/icons/bars-solid.svg'
+    formContainer.style.display = 'none'
+  }
+})
+
+window.addEventListener('resize', () => {
+  if(screen.width > 1050) {
+    formContainer.style.display = 'block'
+  } else {
+    formContainer.style.display = 'none'
+    menuMobileButton.src = 'assets/icons/bars-solid.svg'
+  }
+})

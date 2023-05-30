@@ -8,6 +8,7 @@
   <title>Document</title>
 </head>
 <body>
+  <img id="menu-mobile-btn" src="assets/icons/bars-solid.svg" width="40px" height="40px">
   <div class="content-wraper">
     <section class="form-container">
       <form onsubmit="submitInfo()" id="submit-info" class="form">
@@ -15,7 +16,7 @@
         <label for="zip-code" class="label">Zip Code</label>
         <input type="number" id="zip-code" placeholder="Enter zip code here" required>
         <label for="feelings" class="label">How are you feeling today?</label>
-        <textarea id="feelings" placeholder="Enter your feelings here" rows="7" maxlength="150" required></textarea>
+        <textarea id="feelings" placeholder="Enter your feelings here" maxlength="150" required></textarea>
         <input type="submit" value="Check Temperature" id="btn-submit">
       </form>
     </section>
@@ -23,7 +24,10 @@
     <section class="temp-info-container">
       <div class="temp-info-box">
         <p class="date"></p>
-        <p class="temp"><img src=""></p>
+        <div class="temp-number-wraper">
+          <img class="term-icon" src="">
+          <p class="temp"></p>
+        </div>
         <p class="temp-description"></p>
         <p class="content-info"></p>
       </div>
