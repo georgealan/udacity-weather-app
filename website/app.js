@@ -1,8 +1,7 @@
 const baseUrl = 'https://api.openweathermap.org/data/2.5/weather?zip='
 const units = '&units=metric'
-// let secretKey = ''
-// let apiKey = ''
-const apiKey = `&appid=c918cb52bf20e6c96d3edf181ec837dc${units}`
+let secretKey = ''
+let apiKey = ''
 
 const date = new Date()
 const hour = date.getHours()
@@ -21,13 +20,13 @@ const coverImages = ['01d.svg', '14s.svg', '01n.svg']
 // Set the first cover image depending on the time of day, whether morning, afternoon or evening
 setImageCover(hour)
 
-// Get API Key from server.js Uncomment after review
-// fetch('/getkey')
-//   .then(response => response.text())
-//   .then(key => {
-//     secretKey = key
-//     apiKey = `&appid=${secretKey}${units}`
-//   });
+// Get API Key from server.js
+fetch('/getkey')
+  .then(response => response.text())
+  .then(key => {
+    secretKey = key
+    apiKey = `&appid=${secretKey}${units}`
+  });
 
 // Activate when the form is submitted
 function submitInfo(e) {

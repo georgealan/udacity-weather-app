@@ -24,10 +24,9 @@ app.get('/all', (req, res) => {
   res.send(projectData)
 })
 
-// Uncomment after review
-// app.get('/getkey', (req, res) => {
-//   res.send(key)
-// })
+app.get('/getkey', (req, res) => {
+  res.send(key)
+})
 
 app.post('/add', (req, res) => {
   console.log('POST Request Successful')
