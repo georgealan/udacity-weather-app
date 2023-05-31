@@ -3,10 +3,11 @@
 ## WEATHER APP PROJECT
 **Online Project web site:** <a href="https://udacity-weather-app.onrender.com/" target="_blank">https://udacity-weather-app.onrender.com/</a>
 
+![](https://raw.githubusercontent.com/georgealan/udacity-weather-app/main/website/assets/images/screen-capture.gif)
+
 A project of a Node.js website that consumes the external Open Weather Map API, responsible for fetching weather information from various countries. I organized this information in the website's UI to display on the screen the data obtained from the query of the US states' zip codes.
 
 ## TABLE OF CONTENTS
-=================
 <!-- Start Document Outline -->
    * [DESCRIPTION](#description)
    * [TECHNOLOGIES USED](#technologies-used)
