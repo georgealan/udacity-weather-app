@@ -20,7 +20,7 @@
   "dependencies": {
     "body-parser": "latest",
     "cors": "latest",
-    "dotenv": "^latest",
-    "express": "^latest"
+    "dotenv": "latest",
+    "express": "latest"
   }
 }
