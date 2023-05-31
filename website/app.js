@@ -111,15 +111,6 @@ menuMobileButton.addEventListener('click', () => {
   }
 })
 
-window.addEventListener('resize', () => {
-  if(screen.width > 1050) {
-    formContainer.style.display = 'block'
-  } else {
-    formContainer.style.display = 'none'
-    menuMobileButton.src = 'assets/icons/bars-solid.svg'
-  }
-})
-
 // Set the first cover image depending on the time of day, whether morning, afternoon or evening
 function setImageCover(timeHour) {
   let coverIndex
