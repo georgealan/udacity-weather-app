@@ -5,7 +5,7 @@
 
 A project of a Node.js website that consumes the external Open Weather Map API, responsible for fetching weather information from various countries. I organized this information in the website's UI to display on the screen the data obtained from the query of the US states' zip codes.
 
-TABLE OF CONTENTS
+## TABLE OF CONTENTS
 =================
 <!-- Start Document Outline -->
    * [DESCRIPTION](#description)
@@ -34,13 +34,19 @@ npm install
 ```
 With this command, Node.js will install all the project's dependencies. After installing all the dependencies, you will need an API Key from Open Weather Map. To obtain one, create an account on their website: <a href="https://openweathermap.org/ " target="_blank">https://openweathermap.org/ </a>
 
-Once you have obtained your free API Key, you need to edit the <mark>**.env**</mark> file. In the project, there is a file named as <mark>**.env.example**</mark> with two entries:
+Once you have obtained your free API Key, you need to edit the **.env** file. In the project, there is a file named as **.env.example** with two entries:
 
-```json
+```plaintext
 WEATHER_API_KEY=YOUR_API_KEY_HERE
 PORT=YOUR_PORT_NUMBER_HERE
 ```
-Rename this file to <mark>**.env**</mark> only, remove the <mark>**.example**</mark> extension, and edit the information for the two entries in the file, with your API Key and the port number you want the server to run on. After editing this information, you will be ready to run the <mark>**server.js**</mark> file. To start the server, execute the command:
+Enter your API Key and port number, see an example:
+```plaintext
+WEATHER_API_KEY=0123456789abcdefgh
+PORT=3000
+```
+
+Rename this file to **.env** only, remove the **.example** extension, and edit the information for the two entries in the file, with your API Key and the port number you want the server to run on. After editing this information, you will be ready to run the **server.js** file. To start the server, execute the command:
 
 ```bash
 npm run start
