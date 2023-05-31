@@ -1,5 +1,4 @@
 @import url(typography.css);
-@import url(colors.css);
 
 *,
 *::before,
@@ -16,7 +15,6 @@ html {
   display: flex;
   width: 100vw;
   height: 100vh;
-  background: var(--day-bg);
 }
 
 #menu-mobile-btn {
@@ -31,7 +29,7 @@ html {
 /* //////// FORM SECTION //////// */
 .form-container {
   width: 25%;
-  background-color: #1d1160;
+  background-color: #001E36;
   padding: 1.5em;
 }
 
@@ -68,7 +66,7 @@ input[type=number] {
   border-radius: 0.4em;
   padding: 0.3em;
   margin: 0 0 1em 0;
-  background-color: #31266E;
+  background-color: #153046;
   border: none;
 }
 
@@ -76,7 +74,7 @@ textarea {
   resize: none;
   border-radius: 0.4em;
   padding: 0.3em;
-  background-color: #31266E;
+  background-color: #153046;
   border: none;
 }
 
@@ -108,10 +106,6 @@ input[type=number] {
   align-items: center;
   width: 75%;
   margin: 0 auto;
-  background: url(../assets/images/01d.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
 }
 
 .temp-info-box {
@@ -127,9 +121,9 @@ input[type=number] {
 }
 
 .temp-number-wraper {
-  display: flex;
   align-items: center;
   justify-content: center;
+  display: none;
 }
 
 .content-info {
