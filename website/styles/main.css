@@ -45,7 +45,7 @@ html {
 input[type=submit] {
   margin: 2em 0 0 0;
   border: none;
-  padding: 0.9em 0.9em;
+  padding: 1em 1em;
   cursor: pointer;
   background-color: rgb(16, 120, 255);
   border-radius: 0.4em;
@@ -128,6 +128,10 @@ input[type=number] {
 
 .content-info {
   margin: 1.7em 0 0 0;
+  padding: 0 1em;
+}
+
+.date {
   padding: 0 1em;
 }
 
